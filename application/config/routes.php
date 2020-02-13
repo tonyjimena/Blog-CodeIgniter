@@ -55,7 +55,12 @@ $route['admin'] = 'AdminController/index';
 $route['new_post'] = 'AdminController/new_post';
 $route['add'] = 'AdminController/add';
 $route['autores'] = 'AdminController/autores';
+$route['edit/(:num)'] = 'AdminController/edit';
+$route['update'] = 'AdminController/update';
+$route['edit_autor/(:num)'] = 'AdminController/edit_autor';
+$route['update_autor'] = 'AdminController/update_autor';
 
+$route['delete/(:num)'] = 'AdminController/delete';
 
 
 

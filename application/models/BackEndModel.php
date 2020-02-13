@@ -24,6 +24,15 @@ class BackEndModel extends CI_Model
      return ( $rows);
    }
 
+   public function ExecuteResultsParamsArray( $sql, $params)
+   {
+     $query = $this->db->query( $sql, $params);
+     $rows['data'] = $query->result_array();
+     $query->free_result();
+ 
+     return ( $rows);
+   }
+
     # Ejecuta querys sin devolver resultados deletes, inserts o updates
     public function Execute( $sql)
     {
@@ -33,6 +42,11 @@ class BackEndModel extends CI_Model
     public function insert( $tabla, $datos)
     {
     $this->db->insert( $tabla, $datos);
+    }
+
+    public function update( $tabla, $datos, $where)
+    {
+    $this->db->update( $tabla, $datos, $where);
     }
 
     public function login( $datos)
@@ -58,5 +72,23 @@ class BackEndModel extends CI_Model
         $sql = "Select * from authors order by display_name asc";
 
         return ( $this->ExecuteArrayResults( $sql));
+    }
+
+    public function listOnePost($post_id)
+    {
+        
+        //$sql = "Select * from posts where id = " .$post_id;
+        $sql = "Select * from posts where id = ?";
+        $params = array( $post_id);
+        return ( $this->ExecuteResultsParamsArray( $sql, $params));
+    }
+
+    public function listOneAuthor($author_id)
+    {
+        
+        //$sql = "Select * from posts where id = " .$post_id;
+        $sql = "Select * from authors where id = ?";
+        $params = array( $author_id);
+        return ( $this->ExecuteResultsParamsArray( $sql, $params));
     }
 }
