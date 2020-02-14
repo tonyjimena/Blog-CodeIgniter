@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog con codeigniter</title>
+  <title>Blog con codeigniter by tony</title>
 
   <!-- Bootstrap core CSS -->
   <link href="/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
