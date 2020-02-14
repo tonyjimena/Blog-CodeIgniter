@@ -50,6 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+
+
+
+
 #POST
 $route['admin'] = 'AdminController/index';
 $route['new_post'] = 'AdminController/new_post';
@@ -60,7 +64,8 @@ $route['update'] = 'AdminController/update';
 $route['edit_autor/(:num)'] = 'AdminController/edit_autor';
 $route['update_autor'] = 'AdminController/update_autor';
 
-$route['delete/(:num)'] = 'AdminController/delete';
+$route['delete_author/(:num)'] = 'AdminController/delete_author';
+$route['delete_post/(:num)'] = 'AdminController/delete_post';
 
 
 
@@ -75,6 +80,11 @@ $route['add_autor'] = 'AdminController/add_autor';
 $route['list'] = 'AdminController/list';
 
 
-$route['default_controller'] = 'welcome';
+$route['post/(:num)'] = 'PostController/one_post';
+$route['author/(:num)'] = 'PostController/one_author';
+
+
+
+$route['default_controller'] = 'PostController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -49,6 +49,11 @@ class BackEndModel extends CI_Model
     $this->db->update( $tabla, $datos, $where);
     }
 
+    public function delete( $tabla, $where)
+    {
+    $this->db->delete( $tabla, $where);
+    }
+
     public function login( $datos)
     {
         
@@ -61,7 +66,7 @@ class BackEndModel extends CI_Model
     public function list_post()
     {
         
-        $sql = "Select * from posts order by id desc";
+        $sql = "Select * from posts order by id";
 
         return ( $this->ExecuteArrayResults( $sql));
     }
