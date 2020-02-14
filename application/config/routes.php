@@ -5,69 +5,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 | URI ROUTING
 | -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
-|
-| Typically there is a one-to-one relationship between a URL string
-| and its corresponding controller class/method. The segments in a
-| URL normally follow this pattern:
-|
-|	example.com/class/method/id/
-|
-| In some instances, however, you may want to remap this relationship
-| so that a different class/function is called than the one
-| corresponding to the URL.
-|
-| Please see the user guide for complete details:
-|
-|	https://codeigniter.com/user_guide/general/routing.html
-|
-| -------------------------------------------------------------------------
-| RESERVED ROUTES
-| -------------------------------------------------------------------------
-|
-| There are three reserved routes:
-|
-|	$route['default_controller'] = 'welcome';
-|
-| This route indicates which controller class should be loaded if the
-| URI contains no data. In the above example, the "welcome" class
-| would be loaded.
-|
-|	$route['404_override'] = 'errors/page_missing';
-|
-| This route will tell the Router which controller/method to use if those
-| provided in the URL cannot be matched to a valid route.
-|
-|	$route['translate_uri_dashes'] = FALSE;
-|
-| This is not exactly a route, but allows you to automatically route
-| controller and method names that contain dashes. '-' isn't a valid
-| class or method name character, so it requires translation.
-| When you set this option to TRUE, it will replace ALL dashes in the
-| controller and method URI segments.
-|
-| Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method
 */
-
-
-
-
 
 #POST
 $route['admin'] = 'AdminController/index';
 $route['new_post'] = 'AdminController/new_post';
 $route['add'] = 'AdminController/add';
 $route['autores'] = 'AdminController/autores';
+
+#EDIT
 $route['edit/(:num)'] = 'AdminController/edit';
-$route['update'] = 'AdminController/update';
 $route['edit_autor/(:num)'] = 'AdminController/edit_autor';
+
+#UPDATE
+$route['update'] = 'AdminController/update';
 $route['update_autor'] = 'AdminController/update_autor';
 
+#DELETES
 $route['delete_author/(:num)'] = 'AdminController/delete_author';
 $route['delete_post/(:num)'] = 'AdminController/delete_post';
-
-
 
 #LOGIN
 $route['admin/registro'] = 'AdminController/registro';
@@ -75,16 +31,13 @@ $route['admin/login'] = 'AdminController/login';
 $route['admin/login2'] = 'AdminController/login2';
 $route['login/error'] = 'AdminController/login';
 
-
 $route['add_autor'] = 'AdminController/add_autor';
 $route['list'] = 'AdminController/list';
-
 
 $route['post/(:num)'] = 'PostController/one_post';
 $route['author/(:num)'] = 'PostController/one_author';
 
-
-
+#reservados
 $route['default_controller'] = 'PostController/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
