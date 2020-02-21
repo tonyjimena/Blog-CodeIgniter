@@ -26,12 +26,15 @@ $route['delete_author/(:num)'] = 'AdminController/delete_author';
 $route['delete_post/(:num)'] = 'AdminController/delete_post';
 
 #LOGIN
-$route['admin/registro'] = 'AdminController/registro';
-$route['admin/login'] = 'AdminController/login';
-$route['admin/login2'] = 'AdminController/login2';
-$route['login/error'] = 'AdminController/login';
+$route['registro'] = 'UsersController/registro';
+$route['login'] = 'UsersController/login';
+$route['login2'] = 'UsersController/login2';
+$route['login/error'] = 'UsersController/login';
+$route['add_autor'] = 'UsersController/add_autor';
+$route['logout'] = 'UsersController/logout';
 
-$route['add_autor'] = 'AdminController/add_autor';
+
+
 $route['list'] = 'AdminController/list';
 
 $route['post/(:num)'] = 'PostController/one_post';

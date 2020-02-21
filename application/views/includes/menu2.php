@@ -14,7 +14,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="admin/login">Admin</a>
+            <a class="nav-link" href="login">Inicia Sesion</a>
           </li>
           
         </ul>

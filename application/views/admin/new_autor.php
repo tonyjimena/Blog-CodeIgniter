@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-lg-12 text-left">
        
-        <form role="form" action="/add_autor" method="post">
+        <form role="form" action="add_autor" method="post">
 
 
           <div class="form-group row">

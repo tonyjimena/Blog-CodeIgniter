@@ -36,74 +36,7 @@ class AdminController extends CI_Controller {
 
 		$this->layouts->view ( $vista);
     }
-
-    public function add_autor()
-	{
-        //debug ( $_POST);
-        foreach ($_POST as $key => $value)
-        {
-            $datos[$key] = $value;
-        }
-
-        if (isset($datos['enabled']))
-        {
-            $datos['enabled'] = 1;
-        }
-        else
-        {
-            $datos['enabled'] = 0;
-        }
-        //debug($datos);
-        $datos['password'] = md5($datos['password']);
-        $this->BackEndModel->insert('authors', $datos);
-        
-        header ("location: /list");
-    }
-
-    #funciones para logearse:
-    public function login()
-    {
-        //debug($this->uri);
-            if ( $this->uri->segment(2) ==! null && $this->uri->segment(2) == 'error' )
-        {
-        
-        $datos = array ( 
-            'error' => "Usuario o contraseña invalidos"
-        );
-
-        }
-        else
-        {
-        $datos = array ();
-        }
-
-        $vista = array(
-			'vista' => 'admin/login.php',
-			'params' => $datos,
-			'layout' => 'layout.php',
-			'titulo' => 'Prueba de Controlador login'
-		);
-
-
-		$this->layouts->view ( $vista);
-    }
-
-    public function login2()
-    {
-        $datos['email'] = $_POST['email_login'];
-        $datos['password'] = md5($_POST['login_password']);
-
-        $user = $this->BackEndModel->login($datos);
-        
-        if (empty($user)){
-            header ("location: /login/error");
-
-        }
-        else{
-            header ("location: /list");
-
-        }   
-    }
+    
 
     public function list()
     {
