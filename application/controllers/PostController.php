@@ -57,7 +57,7 @@ class PostController extends CI_Controller {
 
     public function one_author()
 	{
-        $author_id= $this->uri->segment(2);
+        $author_id = $this->uri->segment(2);
 
         //debug($this->uri);
         
@@ -66,7 +66,7 @@ class PostController extends CI_Controller {
         //debug($post);
         
         $datos = array(
-            'post' => $post['0']
+            'post' => $post
         );
 
         $vista = array(

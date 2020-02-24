@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-lg-12 text-left">
        
-        <form role="form" action="add_autor" method="post">
+        <form role="form" action="add_autor" method="post" enctype="multipart/form-data">
 
 
           <div class="form-group row">
@@ -38,6 +38,13 @@
             </div>
            
           </div>
+          
+          <div class="form-group row">
+            <label for="categoria" class="col-lg-2 col-form-label">Foto/imagen/Avatar</label>
+             
+              <div class="col-lg-3 text-lett">
+                <input type="file" name="mi_archivo">
+            </div>
    
           
           <div class="form-group row">
@@ -48,8 +55,6 @@
             </div>
             
           </div>
-
-
 
           <br><br>
           <button type="submit" class="btn btn-primary">Enviar</button>

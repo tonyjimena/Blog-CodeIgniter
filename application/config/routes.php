@@ -25,7 +25,7 @@ $route['update_autor'] = 'AdminController/update_autor';
 $route['delete_author/(:num)'] = 'AdminController/delete_author';
 $route['delete_post/(:num)'] = 'AdminController/delete_post';
 
-#LOGIN
+#LOGIN  USERSCONTROLLER
 $route['registro'] = 'UsersController/registro';
 $route['login'] = 'UsersController/login';
 $route['login2'] = 'UsersController/login2';

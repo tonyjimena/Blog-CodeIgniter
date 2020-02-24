@@ -39,11 +39,6 @@ class BackEndModel extends CI_Model
     $this->db->query( $sql);
     }
 
-    public function insert( $tabla, $datos)
-    {
-    $this->db->insert( $tabla, $datos);
-    }
-
     public function update( $tabla, $datos, $where)
     {
     $this->db->update( $tabla, $datos, $where);
@@ -52,15 +47,6 @@ class BackEndModel extends CI_Model
     public function delete( $tabla, $where)
     {
     $this->db->delete( $tabla, $where);
-    }
-
-    public function login( $datos)
-    {
-        
-        $sql = "Select * from authors Where email = '".$datos['email']."' And
-          password ='".$datos['password']."'";
-
-        return ( $this->ExecuteArrayResults( $sql));
     }
 
     public function list_post()

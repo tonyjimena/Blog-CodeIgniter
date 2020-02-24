@@ -5,7 +5,7 @@ class UsersController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('BackEndModel', 'BackEndModel');
+        $this->load->model('UsersModel', 'UsersModel');
         }
 
     public function registro()
@@ -55,7 +55,7 @@ class UsersController extends CI_Controller {
         $datos['email'] = $_POST['email_login'];
         $datos['password'] = md5($_POST['login_password']);
 
-        $user = $this->BackEndModel->login($datos);
+        $user = $this->UsersModel->login($datos);
         
         if (empty($user)){
             header ("location: /login/error");
@@ -93,7 +93,7 @@ class UsersController extends CI_Controller {
         }
         //debug($datos);
         $datos['password'] = md5($datos['password']);
-        $this->BackEndModel->insert('authors', $datos);
+        $this->UsersModel->insert('authors', $datos);
         
         header ("location: /list");
     }
