@@ -1,2 +1,2 @@
-# codeigniterBlog1 
-Es un blog simple con codeigniter y bootstrap
+# codeigniterBlog
+Blog con codeigniter y bootstrap
